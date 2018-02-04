@@ -19,10 +19,10 @@ perl ./nomacro.pl
 # Debian 7.7 / Ubuntu 14.04 (gcc 4.7+)
 extracflags="$extracflags -Ofast -flto -fuse-linker-plugin -ftree-loop-if-convert-stores"
 
-if [ ! "0" = `cat /proc/cpuinfo | grep -c avx` ]; then
+#if [ ! "0" = `cat /proc/cpuinfo | grep -c avx` ]; then
     # march native doesn't always works, ex. some Pentium Gxxx (no avx)
     #extracflags="$extracflags -march=native"
-fi
+#fi
 
 if [ ! "0" = `grep -i ^Features /proc/cpuinfo | grep -c neon` ]; then
 	    # add ARM neon support on Arm CPUs
