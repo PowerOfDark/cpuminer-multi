@@ -24,7 +24,7 @@ extracflags="$extracflags -Ofast -flto -fuse-linker-plugin -ftree-loop-if-conver
     #extracflags="$extracflags -march=native"
 #fi
 
-if [ ! "0" = `grep -i ^Features /proc/cpuinfo | grep -c neon` ]; then
+#if [ ! "0" = `grep -i ^Features /proc/cpuinfo | grep -c neon` ]; then
 	    # add ARM neon support on Arm CPUs
 	        #extracflags="$extracflags -march=armv7-a -mtune=cortex-a7 -mfpu=neon-vfpv4 -funsafe-math-optimizations -mfloat-abi=softfp"
 #		extracflags="$extracflags -march=armv7-a -mfloat-abi=hard -mfpu=neon-vfpv4  -funsafe-math-optimizations -mtune=cortex-a7"
