@@ -27,19 +27,20 @@ extracflags="$extracflags -Ofast -flto -fuse-linker-plugin -ftree-loop-if-conver
 if [ ! "0" = `grep -i ^Features /proc/cpuinfo | grep -c neon` ]; then
 	    # add ARM neon support on Arm CPUs
 	        #extracflags="$extracflags -march=armv7-a -mtune=cortex-a7 -mfpu=neon-vfpv4 -funsafe-math-optimizations -mfloat-abi=softfp"
-		extracflags="$extracflags -march=armv7-a -mfloat-abi=hard -mfpu=neon-vfpv4  -funsafe-math-optimizations -mtune=cortex-a7"
-fi
+#		extracflags="$extracflags -march=armv7-a -mfloat-abi=hard -mfpu=neon-vfpv4  -funsafe-math-optimizations -mtune=cortex-a7"
+#fi
 
-if [ ! "0" = `grep -i ^Hardware /proc/cpuinfo | egrep -c -e ODROID-C2 -e sun50iw1p1` ]; then
+#if [ ! "0" = `grep -i ^Hardware /proc/cpuinfo | egrep -c -e ODROID-C2 -e sun50iw1p1` ]; then
             # add ARM neon support on Arm64 CPUs
-            extracflags="$extracflags -march=armv8-a+fp+simd+crc+lse -mtune=cortex-a53"
-fi
+#            extracflags="$extracflags -march=armv8-a+fp+simd+crc+lse -mtune=cortex-a53"
+#fi
 
-if [ ! "0" = `grep -i ^Hardware /proc/cpuinfo | grep -c ODROID-XU3` ]; then
+#if [ ! "0" = `grep -i ^Hardware /proc/cpuinfo | grep -c ODROID-XU3` ]; then
             # add ARM neon support on Arm64 CPUs
-            extracflags="$extracflags -march=armv7-a -mfloat-abi=hard -mfpu=neon-vfpv4  -funsafe-math-optimizations -mtune=cortex-a15.cortex-a7"
-fi
+            #extracflags="$extracflags -march=armv7-a -mfloat-abi=hard -funsafe-math-optimizations -mtune=cortex-a53"
+#fi
 
+extracflags=""
 
 
 ./configure --with-crypto --with-curl CFLAGS="-O2 $extracflags -pg" --disable-assembly
