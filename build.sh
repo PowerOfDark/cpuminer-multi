@@ -43,7 +43,7 @@ extracflags="$extracflags -Ofast -flto -fuse-linker-plugin -ftree-loop-if-conver
 extracflags=""
 
 
-./configure --with-crypto --with-curl CFLAGS="-O2 $extracflags -pg" --disable-assembly
+./configure --with-crypto --with-curl --disable-assembly
 
 make -j 4
 
