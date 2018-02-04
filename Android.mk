@@ -33,6 +33,7 @@ LOCAL_MODULE_TAGS=optional
 LOCAL_MODULE_CLASS := UTILITY_EXECUTABLES
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/utilities
 LOCAL_MODULE_STEM := $(LOCAL_MODULE)
+LOCAL_LDLIBS := -llog
 
 LOCAL_C_INCLUDES := $(cpuminer-src)/compat/bionic \
   $(cpuminer-src)/compat/jansson \
